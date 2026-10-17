@@ -7,6 +7,10 @@
  */
 import { EditorStateExtension } from "@lexical/extension";
 import { HistoryExtension } from "@lexical/history";
+import {
+  INSERT_ORDERED_LIST_COMMAND,
+  INSERT_UNORDERED_LIST_COMMAND,
+} from "@lexical/list";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import { useExtensionDependency } from "@lexical/react/useExtensionComponent";
 import {
@@ -24,6 +28,7 @@ import {
   $setState,
   $getRoot,
 } from "lexical";
+import { INSERT_TABLE_COMMAND } from "@lexical/table";
 
 import { pageSetupState } from "./plugins/PagesExtension/pageSetup";
 
@@ -133,6 +138,44 @@ export default function Toolbar() {
         aria-label="Format Strikethrough"
       >
         <i className="format strikethrough" />
+      </button>
+      <Divider />
+      <button
+        type="button"
+        onClick={() => {
+          editor.dispatchCommand(INSERT_UNORDERED_LIST_COMMAND, undefined);
+        }}
+        className="toolbar-item spaced list-button"
+        aria-label="Insert bullet list"
+        title="Bullet list"
+      >
+        <span aria-hidden="true">•</span>
+      </button>
+      <button
+        type="button"
+        onClick={() => {
+          editor.dispatchCommand(INSERT_ORDERED_LIST_COMMAND, undefined);
+        }}
+        className="toolbar-item spaced list-button"
+        aria-label="Insert numbered list"
+        title="Numbered list"
+      >
+        <span aria-hidden="true">1.</span>
+      </button>
+      <button
+        type="button"
+        onClick={() => {
+          editor.dispatchCommand(INSERT_TABLE_COMMAND, {
+            columns: "3",
+            includeHeaders: { rows: true, columns: false },
+            rows: "3",
+          });
+        }}
+        className="toolbar-item spaced table-button"
+        aria-label="Insert 3 by 3 table"
+        title="Insert 3 × 3 table"
+      >
+        Table
       </button>
       <Divider />
       <button

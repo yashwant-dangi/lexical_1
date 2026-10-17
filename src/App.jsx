@@ -5,11 +5,13 @@ import {
   HMRExtension,
 } from '@lexical/extension';
 import {HistoryExtension} from '@lexical/history';
+import {ListExtension} from '@lexical/list';
 import {ExtensionComponent} from '@lexical/react/ExtensionComponent';
 import {ContentEditable} from '@lexical/react/LexicalContentEditable';
 import {LexicalExtensionComposer} from '@lexical/react/LexicalExtensionComposer';
 import {TreeViewExtension} from '@lexical/react/TreeViewExtension';
 import {RichTextExtension} from '@lexical/rich-text';
+import {TableExtension} from '@lexical/table';
 import {configExtension, defineExtension} from 'lexical';
 
 import ExampleTheme from './ExampleTheme';
@@ -27,6 +29,8 @@ const appExtension = defineExtension({
   dependencies: [
     configExtension(HMRExtension, {hot: import.meta.hot ?? null}),
     RichTextExtension,
+    ListExtension,
+    TableExtension,
     ClipboardDOMImportExtension,
     StyleImportExportExtension,
     EditorStateExtension,

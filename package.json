@@ -15,8 +15,10 @@
     "@lexical/extension": "^0.52.0",
     "@lexical/history": "^0.52.0",
     "@lexical/html": "^0.52.0",
+    "@lexical/list": "^0.52.0",
     "@lexical/react": "^0.52.0",
     "@lexical/rich-text": "^0.52.0",
+    "@lexical/table": "^0.52.0",
     "lexical": "^0.52.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"

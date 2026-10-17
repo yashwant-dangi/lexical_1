@@ -16,6 +16,9 @@ import ExampleTheme from './ExampleTheme';
 import {StyleImportExportExtension} from './StyleImportExportExtension';
 import Toolbar from './Toolbar';
 
+import {PageBreakExtension} from './plugins/PageBreakExtension';
+import {PagesReactExtension} from './plugins/PagesReactExtension';
+
 const placeholder = 'Enter some rich text...';
 
 const isEmbedded = new URLSearchParams(window.location.search).has('embed');
@@ -33,6 +36,8 @@ const appExtension = defineExtension({
       disabled: isEmbedded,
     }),
     TreeViewExtension,
+    PageBreakExtension,
+    PagesReactExtension,
   ],
   name: '@lexical/examples/react-rich',
   namespace: 'react-rich',
